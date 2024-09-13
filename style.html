@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Signup</title>
+    <style>
+        body {
+            border: 1px solid black;
+            text-align: center;
+        }
+        .wrapper {
+            display: inline-block;
+            text-align: left;
+            padding: 20px;
+            border: 1px solid #000;
+            margin-top: 20px;
+        }
+        .ram {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .ram label {
+            width: 150px;
+            text-align: left;
+        }
+        .ram input {
+            width: 200px;
+        }
+    </style>
+    <script>
+        function validatePassword() {
+            var password = document.getElementById("c2").value;
+            var confirmPassword = document.getElementById("c3").value;
+            if (password !== confirmPassword) {
+                alert("Passwords do not match.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <div class="wrapper">
+        <h1><b><u>USER SIGNUP</u></b></h1>
+        <form onsubmit="return validatePassword()">
+            <div class="ram">
+                <label for="c1">Name:</label>
+                <input type="text" id="c1" name="name" required> 
+            </div>
+            <div class="ram">
+                <label for="c2">Password:</label>
+                <input type="password" id="c2" name="password" required> 
+            </div>
+            <div class="ram">
+                <label for="c3">Confirm Password:</label>
+                <input type="password" id="c3" name="confirm_password" required> 
+            </div>
+            <br>
+            <label for="gender">Gender:</label>
+            <label for="male">Male</label>
+            <input type="radio" id="male" name="gender" value="male" required>
+            <label for="female">Female</label>
+            <input type="radio" id="female" name="gender" value="female" required>
+            <br><br>
+            <label for="language">Language:</label>
+            <label for="c5">Hindi</label>
+            <input type="checkbox" id="c5" name="language" value="Hindi">
+            <br>
+            <label for="c6">English</label>
+            <input type="checkbox" id="c6" name="language" value="English">
+            <br>
+            <label for="c7">German</label>
+            <input type="checkbox" id="c7" name="language" value="German">
+            <br><br>
+            <label for="comment">Further Comment:</label>
+            <textarea id="comment" name="comment" cols="50" rows="5"></textarea>
+            <br><br>
+            <label for="country">Country:</label>
+            <select id="country" name="country" required>
+                <option value="uttar pradesh" selected>Uttar Pradesh</option>
+                <option value="uttarakhand">Uttarakhand</option>
+                <option value="bihar">Bihar</option>
+                <option value="mumbai">Mumbai</option>
+            </select>
+            <br><br>
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+            <input type="button" value="Cancel" onclick="window.location.href='/'">
+        </form>
+    </div>
+</body>
+</html>
